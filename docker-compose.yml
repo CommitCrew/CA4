@@ -1,13 +1,13 @@
 version: '3'
 services:
   web:
-    image: CA4:1.0
+    image: webapp:latest
     ports:
       - "80:80"
     volumes:
       - ./web:/app
   database:
-    image: CA4:2.0
+    image: firstsql_image:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
     volumes:
