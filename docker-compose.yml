@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  web:
+    image: commitcrew/webapp:latest
+    links:
+      - database
+    ports:
+      - "80:80"
+
+  database:
+    image: commitcrew/firstsql_image
+    ports: 
+    - "32000:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
