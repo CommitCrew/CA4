@@ -25,4 +25,3 @@ jobs:
     - name: Stop Services with Docker Compose
       run: |
         docker-compose down
-      working-directory: ./path/to/your/docker-compose/directory
