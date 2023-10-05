@@ -1,0 +1,28 @@
+name: App Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Compose
+      run: |
+        docker-compose --version
+        docker-compose build
+
+    - name: Start Services with Docker Compose
+      run: |
+        docker-compose up -d
+
+    - name: Stop Services with Docker Compose
+      run: |
+        docker-compose down
+      working-directory: ./path/to/your/docker-compose/directory
