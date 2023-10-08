@@ -1,9 +1,8 @@
-FROM mysql:latest
 
-
-ENV MYSQL_ROOT_PASSWORD=root
-
-# ENV MYSQL_DATABASE=mydb
-COPY ./database.sql /docker-entrypoint-initdb.d/
-
-EXPOSE 3306
+FROM python:3.9
+WORKDIR /app
+COPY . /app
+RUN pip install -r requirements.txt
+EXPOSE 80
+ENV USERNAME=commitcrew
+CMD ["python", "app.py"]
