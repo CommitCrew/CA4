@@ -1,12 +1,13 @@
-create database studentInfo;
-use studentInfo;
+create database userInfo;
+use userInfo;
 
-create table students(
+create table users(
 
-		StudentID int,
+		userID int,
         FirstName varchar(50),
         LastName varchar(50),
-        Primary key(StudentID)   
+        Primary key(userID)
+        
 );
-Insert INTO students(StudentID,FirstName,LastName)
+Insert INTO users(userID,FirstName,LastName)
 Values(1,"Fatima","Abdul Wahid"),(2,"Zuha","Umar"),(3,"Hadiya","Farooq");
