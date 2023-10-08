@@ -1,7 +1,7 @@
 create database studentInfo;
 use studentInfo;
 
-create table stduentInfo(
+create table students(
 
 		StudentID int,
         FirstName varchar(50),
@@ -9,5 +9,5 @@ create table stduentInfo(
         Primary key(StudentID)
         
 );
-Insert INTO stduentInfo(StudentID,FirstName,LastName)
+Insert INTO students(StudentID,FirstName,LastName)
 Values(1,"Fatima","Abdul Wahid"),(2,"Zuha","Umar"),(3,"Hadiya","Farooq");
