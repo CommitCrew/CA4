@@ -1,10 +1,6 @@
 # Repository Name
 
-This repository contains the code for [Project Name/Description].
-
-## Getting Started
-
-Follow these steps to get started with the project.
+This repository has the code for Class Activity # 04.
 
 ### Prerequisites
 
@@ -13,7 +9,7 @@ Make sure you have the following prerequisites installed on your system:
 - [Docker](https://www.docker.com/get-started)
 - [Git](https://git-scm.com/)
 
-### Installation
+### Steps
 
 1. Clone the repository to your local machine:
 
