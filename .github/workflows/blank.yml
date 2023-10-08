@@ -1,0 +1,27 @@
+name: SQL Workflow
+
+on:
+  push:
+    branches:
+      - i200711
+  
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: |
+        docker build -t commitcrew/firstsql_image:latest .
+
+    - name: Run docker image
+      run: |
+        docker run commitcrew/firstsql_image:latest
+
+    - name: Push  Docker image
+      run: |
+        docker push commitcrew/firstsql_image:latest       
