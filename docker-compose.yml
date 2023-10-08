@@ -1,14 +1,14 @@
 version: '3'
 services:
   web:
-    image: commitcrew/webserver:latest  # Replace with your Python application image
+    image: commitcrew/webserver:latest  
     environment:
       - DB_HOST=database
       - DB_USER=root
       - DB_PASSWORD=commitcrew123
       - DB_DATABASE=studentInfo
     ports:
-      - "80:80"  # Adjust the port as needed
+      - "80:80"  
     depends_on:
       - database
 
