@@ -7,21 +7,18 @@ app = Flask(__name__)
 def index():
     # Connect to MySQL
     db = mysql.connector.connect(
-        host='mysql_host',
-        user='mysql_user',
-        password='mysql_password',
-        database='mysql_database'
+        host='localhost',
+        user='root',
+        password='root',
+        database='studentInfo'
     )
     cursor = db.cursor()
 
-    # Execute SQL queries
-    cursor.execute('SELECT * FROM your_table')
+    cursor.execute('SELECT * FROM studentInfo')
     data = cursor.fetchall()
 
-    # Close the database connection
     db.close()
 
-    # Return data as JSON
     return jsonify(data)
 
 if __name__ == '__main__':
