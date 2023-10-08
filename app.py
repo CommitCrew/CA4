@@ -10,12 +10,12 @@ def index():
         with mysql.connector.connect(
             host='localhost',
             user='root',
-            password='commitcrew123',
-            database='studentInfo'
+            password='Fatima16',
+            database='userInfo'
         ) as db:
             cursor = db.cursor()
 
-            cursor.execute('SELECT * FROM students')
+            cursor.execute('SELECT * FROM users')
             data = cursor.fetchall()
 
             return jsonify(data)
@@ -25,4 +25,6 @@ def index():
         return "An error occurred while processing your request.", 500  # Return a 500 Internal Server Error response
 
 if __name__ == '_main_':
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+    
+    
