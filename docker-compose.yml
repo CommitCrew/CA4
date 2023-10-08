@@ -1,18 +1,26 @@
 version: '3'
 services:
   web:
-    image: commitcrew/webserver:latest
-    ports:
-      - "80:80"
-    networks:
-      - my_network
-  database:
-    image: commitcrew/my_sql:latest  # Corrected image name
+    image: commitcrew/webserver:latest  # Replace with your Python application image
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: "studentInfo"
-    networks:
-      - my_network
+      - DB_HOST=database
+      - DB_USER=root
+      - DB_PASSWORD=commitcrew123
+      - DB_DATABASE=studentInfo
+    ports:
+      - "80:80"  # Adjust the port as needed
+    depends_on:
+      - database
 
-networks:
-  my_network:
+  database:
+    image: commitcrew/my_sql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: commitcrew123
+      MYSQL_DATABASE: studentInfo
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
