@@ -23,9 +23,8 @@ Make sure you have the following prerequisites installed on your system:
     cd CA4
     ```
 
-### Usage
+3. Use docker-compose
 
-To run the project, use the following Docker Compose command:
-
-```bash
-docker-compose up
+    ```bash
+    docker-compose up
+    ```
